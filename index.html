@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>HONOR TV</title>
+<script>
+document.write(unescape('%3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22en%22%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%2C%20user-scalable%3Dno%22%3E%0A%20%20%3Ctitle%3EHONOR%20TV%3C/title%3E%0A%0A%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22istyle.css%22%3E%0A%0A%20%20%3C%21--%20Shaka%20Player%20--%3E%0A%20%20%3Cscript%20src%3D%22https%3A//cdn.jsdelivr.net/npm/shaka-player@4.3.5/dist/shaka-player.compiled.min.js%22%3E%3C/script%3E%0A%3C/head%3E%0A%0A%3Cbody%3E%0A%20%20%3Cdiv%20class%3D%22sidebar%22%20id%3D%22channelList%22%3E%3C/div%3E%0A%0A%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22controls%22%3E%0A%20%20%20%20%20%20%3Cbutton%20id%3D%22fullscreenBtn%22%3E%u26F6%20Fullscreen%3C/button%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cdiv%20id%3D%22spinnerOverlay%22%3E%0A%20%20%20%20%20%20%3Cdiv%20id%3D%22spinner%22%3E%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cvideo%20id%3D%22video%22%20controls%20autoplay%20playsinline%3E%3C/video%3E%0A%0A%20%20%20%20%3C%21--%20YouTube%20Player%20--%3E%0A%20%20%20%20%3Ciframe%20id%3D%22ytPlayer%22%0A%20%20%20%20%20%20allow%3D%22autoplay%3B%20encrypted-media%22%0A%20%20%20%20%20%20allowfullscreen%3E%0A%20%20%20%20%3C/iframe%3E%0A%20%20%3C/div%3E%0A%0A%20%20%3Cscript%20src%3D%22iscript.js%22%3E%3C/script%3E%0A%3C/body%3E%0A%3C/html%3E'));
+</script>
 
-  <link rel="stylesheet" href="istyle.css">
-
-  <!-- Shaka Player -->
-  <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.3.5/dist/shaka-player.compiled.min.js"></script>
-</head>
-
-<body>
-  <div class="sidebar" id="channelList"></div>
-
-  <div class="content">
-    <div class="controls">
-      <button id="fullscreenBtn">⛶ Fullscreen</button>
-    </div>
-
-    <div id="spinnerOverlay">
-      <div id="spinner"></div>
-    </div>
-
-    <video id="video" controls autoplay playsinline></video>
-
-    <!-- YouTube Player -->
-    <iframe id="ytPlayer"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <script src="iscript.js"></script>
-</body>
-</html>
