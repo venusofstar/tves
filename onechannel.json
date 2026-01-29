@@ -10,13 +10,6 @@
     "category": "PHILIPPINES CHANNEL"
   },
   {
-    "name": "GTV",
-    "logo": "https://upload.wikimedia.org/wikipedia/en/4/40/GTV_Philippines_Logo_Vector.svg",
-    "type": "hls",
-    "manifestUri": "https://streams.honortvph.qzz.io/stream/live/gtv/master.m3u8?u=honortvph&p=b69f5a41f79712041caed2b676cb8c40148bce33eddb3472c786c97a557c0793",
-    "category": "PHILIPPINES CHANNEL"
-  },
-  {
     "name": "DZRH",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQFqtRPGDBzzZYgi6K8ZYexRgLoeWXmOPISA&s",
     "type": "youtube",
@@ -54,33 +47,17 @@
     "category": "PHILIPPINES CHANNEL"
   },
   {
-    "name": "TFC ASIA",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Filipino_Channel_%28TFC%29_logo.png",
-    "type": "dash",
-    "manifestUri": "https://d1facupi3cod3q.cloudfront.net/out/v1/e3633f8591e248b0af1af15a474bfa4a/index.mpd",
-    "clearKey": {
-      "9568cc84e1d944f38eac304517eab6fd": "f12142af8f39b3bab79d3679d3665ebe"
-    },
+    "name": "GMA",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/GMA_Network_Logo_Vector.svg/1280px-GMA_Network_Logo_Vector.svg.png",
+    "type": "hls",
+    "manifestUri": "https://streams.honortvph.qzz.io/stream/live/gma/master.m3u8?u=honortvph&p=b69f5a41f79712041caed2b676cb8c40148bce33eddb3472c786c97a557c0793",
     "category": "PHILIPPINES CHANNEL"
-  },
+      },
   {
-    "name": "TFC EUROPE",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Filipino_Channel_%28TFC%29_logo.png",
-    "type": "dash",
-    "manifestUri": "https://d123wz0csfw11u.cloudfront.net/out/v1/6e2906534002432984f73742ef2bcbfe/index.mpd",
-    "clearKey": {
-      "457c50351e2a4c42a5c34cfb5c0b0682": "03a2754079e082f7dec48ad362e3899e"
-    },
-    "category": "PHILIPPINES CHANNEL"
-  },
-  {
-    "name": "TFC CANADA",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Filipino_Channel_%28TFC%29_logo.png",
-    "type": "dash",
-    "manifestUri": "https://du44jtt5g7upx.cloudfront.net/out/v1/a3b708325c1d43dc9549c262526a6945/index.mpd",
-    "clearKey": {
-      "9c700e42ffc64d9b82d94cf57a2302fa": "44d038e1fdcaefb3e75ffb4e42537279"
-    },
+    "name": "GTV",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/4/40/GTV_Philippines_Logo_Vector.svg",
+    "type": "hls",
+    "manifestUri": "https://streams.honortvph.qzz.io/stream/live/gtv/master.m3u8?u=honortvph&p=b69f5a41f79712041caed2b676cb8c40148bce33eddb3472c786c97a557c0793",
     "category": "PHILIPPINES CHANNEL"
   },
   {
