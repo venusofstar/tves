@@ -30,7 +30,7 @@ async function loadChannels() {
     renderChannels();
   } catch (err) {
     console.error("Error loading channels:", err);
-    alert("Cannot load onechannels.json. Make sure you run this via HTTP server!");
+    alert("Cannot load onechannel.json. Make sure you run this via HTTP server!");
   }
 }
 
@@ -40,15 +40,17 @@ function renderChannels() {
   channels.forEach((ch, i) => {
     const div = document.createElement("div");
     div.className = "channel";
-    div.innerHTML = `<img src="${ch.logo}"><span>${ch.name}</span>`;
+    div.innerHTML = `<img src="${ch.logo}" alt="${ch.name}"><span>${ch.name}</span>`;
+    div.tabIndex = 0; // make focusable
     div.onclick = () => playChannel(ch, div);
     channelList.appendChild(div);
   });
 
-  const items = document.querySelectorAll(".channel");
-  if (items.length > 0) {
-    items[0].classList.add("focused");
-    playChannel(channels[0], items[0]);
+  if (channels.length > 0) {
+    focusedIndex = 0;
+    const firstDiv = channelList.children[0];
+    firstDiv.classList.add("focused");
+    playChannel(channels[0], firstDiv);
   }
 }
 
@@ -60,30 +62,27 @@ async function playChannel(ch, el) {
 
   showSpinner();
 
-  // Handle YouTube channel
-  if (ch.type === "youtube") {
-    video.pause();
-    video.style.display = "none";
-    ytPlayer.style.display = "block";
-    ytPlayer.src = `https://www.youtube.com/embed/${ch.videoId}?autoplay=1&controls=1&rel=0`;
-    hideSpinner();
-    return;
-  }
-
-  // Handle DASH / HLS
-  ytPlayer.style.display = "none";
-  ytPlayer.src = "";
-  video.style.display = "block";
-
   try {
-    // Configure DRM for DASH if present
-    if (ch.type === "dash" && ch.clearKey) {
-      player.configure({ drm: { clearKeys: ch.clearKey } });
-    }
+    if (ch.type === "youtube") {
+      // YouTube embed
+      video.pause();
+      video.style.display = "none";
+      ytPlayer.style.display = "block";
+      ytPlayer.src = `https://www.youtube.com/embed/${ch.videoId}?autoplay=1&controls=1&rel=0`;
+    } else {
+      // DASH / HLS playback
+      ytPlayer.style.display = "none";
+      ytPlayer.src = "";
+      video.style.display = "block";
 
-    // Load stream
-    await player.load(ch.manifestUri);
-    console.log("Now playing:", ch.name);
+      // DRM for DASH if present
+      if (ch.type === "dash" && ch.clearKey) {
+        player.configure({ drm: { clearKeys: ch.clearKey } });
+      }
+
+      await player.load(ch.manifestUri);
+      console.log("Now playing:", ch.name);
+    }
   } catch (err) {
     console.error("Playback error:", err);
     alert(`Cannot play ${ch.name}. Check console for details.`);
@@ -109,11 +108,11 @@ document.addEventListener("keydown", e => {
 // Fullscreen button
 fullscreenBtn.onclick = () => {
   const el = ytPlayer.style.display === "block" ? ytPlayer : video;
-  if (!document.fullscreenElement) el.requestFullscreen();
-  else document.exitFullscreen();
+  if (!document.fullscreenElement) el.requestFullscreen().catch(err => console.error(err));
+  else document.exitFullscreen().catch(err => console.error(err));
 };
 
-// Show spinner on waiting, hide on playing
+// Spinner on waiting / playing
 video.addEventListener("waiting", showSpinner);
 video.addEventListener("playing", hideSpinner);
 
