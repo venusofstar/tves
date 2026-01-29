@@ -9,29 +9,55 @@ if (!shaka.Player.isBrowserSupported()) {
 const video = document.getElementById("video");
 const ytPlayer = document.getElementById("ytPlayer");
 const spinner = document.getElementById("spinnerOverlay");
+const channelList = document.getElementById("channelList");
 const fullscreenBtn = document.getElementById("fullscreenBtn");
 
 const player = new shaka.Player(video);
+
+let channels = [];
+let focusedIndex = 0;
 
 // Show / Hide spinner
 function showSpinner() { spinner.style.display = "flex"; }
 function hideSpinner() { spinner.style.display = "none"; }
 
-// Load single channel from JSON
-async function loadChannel() {
+// Load channels from JSON
+async function loadChannels() {
   try {
     const res = await fetch("onechannel.json");
     if (!res.ok) throw new Error("Failed to fetch onechannel.json");
-    const channel = await res.json();
-    playChannel(channel);
+    channels = await res.json();
+    renderChannels();
   } catch (err) {
-    console.error("Error loading channel:", err);
-    alert("Cannot load onechannel.json. Make sure you run this via HTTP server!");
+    console.error("Error loading channels:", err);
+    alert("Cannot load channels.json. Make sure you run this via HTTP server!");
   }
 }
 
-// Play the channel
-async function playChannel(ch) {
+// Render channels in sidebar
+function renderChannels() {
+  channelList.innerHTML = "";
+  channels.forEach((ch, i) => {
+    const div = document.createElement("div");
+    div.className = "channel";
+    div.innerHTML = `<img src="${ch.logo}"><span>${ch.name}</span>`;
+    div.onclick = () => playChannel(ch, div);
+    channelList.appendChild(div);
+  });
+
+  const items = document.querySelectorAll(".channel");
+  if (items.length > 0) {
+    items[0].classList.add("focused");
+    playChannel(channels[0], items[0]);
+  }
+}
+
+// Play selected channel
+async function playChannel(ch, el) {
+  // Highlight active channel
+  document.querySelectorAll(".channel").forEach(c => c.classList.remove("active"));
+  el.classList.add("active");
+
   showSpinner();
 
   // Handle YouTube channel
@@ -66,6 +92,20 @@ async function playChannel(ch) {
   }
 }
 
+// Keyboard navigation
+document.addEventListener("keydown", e => {
+  const items = document.querySelectorAll(".channel");
+  if (!items.length) return;
+
+  if (e.key === "ArrowDown") focusedIndex = Math.min(items.length - 1, focusedIndex + 1);
+  if (e.key === "ArrowUp") focusedIndex = Math.max(0, focusedIndex - 1);
+  if (e.key === "Enter") items[focusedIndex].click();
+
+  items.forEach(i => i.classList.remove("focused"));
+  items[focusedIndex].classList.add("focused");
+  items[focusedIndex].scrollIntoView({ block: "nearest" });
+});
+
 // Fullscreen button
 fullscreenBtn.onclick = () => {
   const el = ytPlayer.style.display === "block" ? ytPlayer : video;
@@ -77,5 +117,5 @@ fullscreenBtn.onclick = () => {
 video.addEventListener("waiting", showSpinner);
 video.addEventListener("playing", hideSpinner);
 
-// Load channel at startup
-loadChannel();
+// Load channels at startup
+loadChannels();
