@@ -6,7 +6,77 @@
     "manifestUri": "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/tv5_hd/default1/index.mpd",
     "clearKey": {
       "2615129ef2c846a9bbd43a641c7303ef": "07c7f996b1734ea288641a68e1cfdc4d"
-    }
+    },
+  {
+    "name": "A2Z",
+    "logo": "https://i.imgur.com/43nZ2rv.png",
+    "type": "dash",
+    "manifestUri": "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_a2z/default/index.mpd",
+    "clearKey": { "f703e4c8ec9041eeb5028ab4248fa094": "c22f2162e176eee6273a5d0b68d19530" }
+  },
+  {
+    "name": "TELERADYO",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/TeleRadyo_Serbisyo_logo.svg/1200px-TeleRadyo_Serbisyo_logo.svg.png",
+    "type": "dash",
+    "manifestUri": "https://d14c00opfjb50c.cloudfront.net/out/v1/0fa4eb67579d41cca4ed146c93aa855f/index.mpd",
+    "clearKey": { "47c093e0c9fd4f80839a0337da3dd876": "50547394045b3d047dc7d92f57b5fb33" }
+  },
+  {
+    "name": "KAPAMILYA CHANNEL",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRMK-ixBDw04VD6UFIA87VRet7mUqn00xYXQ&s",
+    "type": "dash",
+    "manifestUri": "https://d1uf7s78uqso1e.cloudfront.net/out/v1/efa01372657648be830e7c23ff68bea2/index.mpd",
+    "clearKey": { "bd17afb5dc9648a39be79ee3634dd4b8": "3ecf305d54a7729299b93a3d69c02ea5" }
+  },
+  {
+    "name": "TFC ASIA",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Filipino_Channel_%28TFC%29_logo.png",
+    "type": "dash",
+    "manifestUri": "https://d1facupi3cod3q.cloudfront.net/out/v1/e3633f8591e248b0af1af15a474bfa4a/index.mpd",
+    "clearKey": { "9568cc84e1d944f38eac304517eab6fd": "f12142af8f39b3bab79d3679d3665ebe" }
+  },
+  {
+    "name": "TFC EUROPE",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Filipino_Channel_%28TFC%29_logo.png",
+    "type": "dash",
+    "manifestUri": "https://d123wz0csfw11u.cloudfront.net/out/v1/6e2906534002432984f73742ef2bcbfe/index.mpd",
+    "clearKey": { "457c50351e2a4c42a5c34cfb5c0b0682": "03a2754079e082f7dec48ad362e3899e" }
+  },
+  {
+    "name": "TFC CANADA",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Filipino_Channel_%28TFC%29_logo.png",
+    "type": "dash",
+    "manifestUri": "https://du44jtt5g7upx.cloudfront.net/out/v1/a3b708325c1d43dc9549c262526a6945/index.mpd",
+    "clearKey": { "9c700e42ffc64d9b82d94cf57a2302fa": "44d038e1fdcaefb3e75ffb4e42537279" }
+  },
+  {
+    "name": "GMA Pinoy TV",
+    "logo": "https://i.imgur.com/Eo0f51v.png",
+    "type": "dash",
+    "manifestUri": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01006-abs-cbn-abscbn-gma-x7-dash-abscbnono/7c693236-e0c1-40a3-8bd0-bb25e43f5bfc/index/default/index.mpd",
+    "clearKey": { "c95ed4c44b0b4f7fa1c6ebbbbaab21a1": "47635b8e885e19f2ccbdff078c207058" }
+  },
+  {
+    "name": "PBO",
+    "logo": "https://i.imgur.com/buOVATz.png",
+    "type": "dash",
+    "manifestUri": "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/pbo_sd/default/index.mpd",
+    "clearKey": { "dcbdaaa6662d4188bdf97f9f0ca5e830": "31e752b441bd2972f2b98a4b1bc1c7a1" }
+  },
+  {
+    "name": "Sari-Sari",
+    "logo": "https://i.imgur.com/MXxN1UO.png",
+    "type": "dash",
+    "manifestUri": "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_sarisari/default/index.mpd",
+    "clearKey": { "0a7ab3612f434335aa6e895016d8cd2d": "b21654621230ae21714a5cab52daeb9d" }
+  },
+  {
+    "name": "Viva Cinema",
+    "logo": "https://i.imgur.com/51RWtvd.png",
+    "type": "dash",
+    "manifestUri": "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/viva_sd/default/index.mpd",
+    "clearKey": { "07aa813bf2c147748046edd930f7736e": "3bd6688b8b44e96201e753224adfc8fb" }
+  }
   },
   {
     "name": "GTV",
