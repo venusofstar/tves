@@ -24,13 +24,13 @@ function hideSpinner() { spinner.style.display = "none"; }
 // Load channels from JSON
 async function loadChannels() {
   try {
-    const res = await fetch("channel.json");
-    if (!res.ok) throw new Error("Failed to fetch channel.json");
+    const res = await fetch("onechannel.json");
+    if (!res.ok) throw new Error("Failed to fetch onechannel.json");
     channels = await res.json();
     renderChannels();
   } catch (err) {
     console.error("Error loading channels:", err);
-    alert("Cannot load channels.json. Make sure you run this via HTTP server!");
+    alert("Cannot load onechannels.json. Make sure you run this via HTTP server!");
   }
 }
 
